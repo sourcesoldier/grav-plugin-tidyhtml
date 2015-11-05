@@ -1,0 +1,13 @@
+name: Tidyhtml
+version: 1.0.0
+description: Simple static file cache solution
+icon: code
+author:
+  name: Clemens Queissner
+  email: clemens.queissner@cq-design.de
+  url: https://cq-design.de
+homepage: https://github.com/sourcesoldier
+demo: https://cq-design.de
+keywords: html tidy beautiful
+bugs: https://github.com/sourcesoldier
+license: GPL v3
