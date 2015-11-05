@@ -1,13 +1,13 @@
 name: Tidyhtml
 version: 1.0.0
-description: Simple static file cache solution
+description: TidyPHP integration for Grav.
 icon: code
 author:
   name: Clemens Queissner
   email: clemens.queissner@cq-design.de
   url: https://cq-design.de
-homepage: https://github.com/sourcesoldier
+homepage: https://github.com/sourcesoldier/grav-plugin-tidyhtml
 demo: https://cq-design.de
 keywords: html tidy beautiful
-bugs: https://github.com/sourcesoldier
+bugs: https://github.com/sourcesoldier/grav-plugin-tidyhtml/issues
 license: GPL v3
