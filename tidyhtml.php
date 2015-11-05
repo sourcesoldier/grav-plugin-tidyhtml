@@ -42,7 +42,7 @@ class TidyhtmlPlugin extends Plugin
 
     public function onOutputGenerated()
     {
-            $orginOutput = $this->grav->output;
+            $originOutput = $this->grav->output;
 
             $config = array(
                 'indent' => true,
@@ -56,7 +56,7 @@ class TidyhtmlPlugin extends Plugin
             );
 
             /** @var tidy $tidy */
-            $tidy = tidy_parse_string($orginOutput, $config, 'UTF8');
+            $tidy = tidy_parse_string($originOutput, $config, 'UTF8');
             $tidy->cleanRepair();
             $this->grav->output = $tidy;
 
