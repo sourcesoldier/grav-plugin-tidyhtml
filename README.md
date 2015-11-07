@@ -23,8 +23,6 @@ $ git clone git@github.com:sourcesoldier/grav-plugin-tidyhtml.git tidyhtml
 
 # Usage
 
-The plugin is enabled by default, if you want to disable it make sure to place a `tidyhtml.yaml` file in the `user/config/plugins/` directory
-# Things still missing
+The plugin is enabled by default, if you want to disable it make sure to place a `tidyhtml.yaml` file in the `user/config/plugins/` directory.
 
-- Using the blueprint.yaml to specify the config settings
-- Making sure the php extension is available before running the method
+Most of the settings already applied to the defaults are most common to the HTML5 standard. Checkout the plugin settings in the admin panel to modify the settings to your needs.
