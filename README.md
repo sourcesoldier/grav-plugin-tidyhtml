@@ -2,6 +2,10 @@
 
 [Clemens Queissner](https://cq-design.de)
 
+# Requirements
+
+This plugins requires you to have the PHP module `tidy` installed.
+Check out the official [PHP doc](http://php.net/manual/en/book.tidy.php).
 
 # Installation
 

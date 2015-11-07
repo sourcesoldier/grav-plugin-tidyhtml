@@ -1,5 +1,5 @@
 name: Tidyhtml
-version: 1.0.0
+version: 1.0.1
 description: TidyPHP integration for Grav.
 icon: code
 author:
@@ -11,3 +11,79 @@ demo: https://cq-design.de
 keywords: html tidy beautiful
 bugs: https://github.com/sourcesoldier/grav-plugin-tidyhtml/issues
 license: GPL v3
+
+form:
+  validation: strict
+  fields:
+    basic_section:
+      type: section
+      title: Basic configurtion
+      underline: false
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    indent:
+      type: toggle
+      label: Ident rendered HTML code
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    wrap:
+      type: text
+      label: Line-wrap (0 = no wrapping, 68 = standard)
+      default: 0
+      size: x-small
+      validate:
+        type: int
+        min: 1
+    indent_spaces:
+      type: text
+      label: Spaces to use for indents
+      size: x-small
+      default: 4
+      validate:
+        type: number
+        min: 1
+    hide_comments:
+      type: toggle
+      label: Hide HTML comments in rendered HTML
+      highlight: 1
+      default: 1
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+    tag_section:
+      type: section
+      title: HTML tag configuration
+      underline: false
+    blocklevel_tags:
+      type: array
+      label: New block-level tags
+      default: [article, aside, audio, bdi, canvas, details, dialog, figcaption, figure, footer, header, hgroup, main, menu, menuitem, nav, section, source, summary, template, track, video,]
+      size: medium
+      value_only: true
+    inline_tags:
+      type: array
+      label: New inline-level tags
+      default: [audio, command, datalist, embed, keygen, mark, menuitem, meter, output, progress, source, time, video, wbr, data]
+      size: medium
+      value_only: true
+    empty_tags:
+      type: array
+      label: This option specifies new empty inline tags
+      default: [command, embed, keygen, source, track, wbr]
+      size: medium
+      value_only: true

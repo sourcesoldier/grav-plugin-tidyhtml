@@ -1,1 +1,51 @@
 enabled: true
+hide_comments: true
+indent: true
+wrap: 0
+indent_spaces: 4
+blocklevel_tags:
+  - article
+  - header
+  - aside
+  - audio
+  - bdi
+  - canvas
+  - details
+  - dialog
+  - figcaption
+  - figure
+  - footer
+  - hgroup
+  - main
+  - menu
+  - menuitem
+  - nav
+  - section
+  - source
+  - summary
+  - template
+  - track
+  - video
+empty_tags:
+  - command
+  - embed
+  - keygen
+  - source
+  - track
+  - wbr
+inline_tags:
+  - audio
+  - command
+  - datalist
+  - embed
+  - keygen
+  - mark
+  - menuitem
+  - meter
+  - output
+  - progress
+  - source
+  - time
+  - video
+  - wbr
+  - data
