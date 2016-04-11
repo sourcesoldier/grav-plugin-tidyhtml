@@ -55,6 +55,8 @@ class TidyhtmlPlugin extends Plugin
      */
     public function onOutputGenerated()
     {
+            if(in_array($this->grav['uri']->path(), (array) $this->config->get('plugins.tidyhtml.ignores') )) return;
+            
             $originOutput = $this->grav->output;
 
             $config = array(
