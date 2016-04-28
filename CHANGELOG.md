@@ -1,3 +1,8 @@
+# v1.0.2
+## 04/28/2016
+1. [](#improved)
+    * Merged pull request from https://github.com/jnaskali THX!
+
 # v1.0.1
 ## 11/07/2015
 1. [](#new)
