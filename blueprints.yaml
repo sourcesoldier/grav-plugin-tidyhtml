@@ -1,5 +1,5 @@
 name: Tidyhtml
-version: 1.0.2
+version: 1.0.3
 description: TidyPHP integration for Grav.
 icon: code
 author:
@@ -85,5 +85,11 @@ form:
       type: array
       label: This option specifies new empty inline tags
       default: [command, embed, keygen, source, track, wbr]
+      size: medium
+      value_only: true
+    ignore_pages:
+      type: array
+      label: Pages to be ignored by tidy processing.
+      default: [sitemap]
       size: medium
       value_only: true

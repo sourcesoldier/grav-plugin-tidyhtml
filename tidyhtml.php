@@ -14,6 +14,9 @@ use \Grav\Common\Plugin;
 
 class TidyhtmlPlugin extends Plugin
 {
+
+    const PLUGIN_CONFIG_PATH = 'plugins.tidyhtml';
+
     /** -------------
      * Public methods
      * --------------
@@ -55,18 +58,20 @@ class TidyhtmlPlugin extends Plugin
      */
     public function onOutputGenerated()
     {
-            if(in_array($this->grav['uri']->path(), (array) $this->config->get('plugins.tidyhtml.ignores') )) return;
-            
+            if($this->skipCurrentSite($this->grav['uri']->path())) {
+                return;
+            }
+
             $originOutput = $this->grav->output;
 
             $config = array(
-                'indent'                =>  $this->config->get('plugins.tidyhtml.indent'),
-                'indent-spaces'         =>  $this->config->get('plugins.tidyhtml.indent_spaces'),
-                'wrap'                  =>  $this->config->get('plugins.tidyhtml.wrap'),
-                'hide-comments'         =>  $this->config->get('plugins.tidyhtml.hide_comments'),
-                'new-blocklevel-tags'   =>  implode(' ', $this->config->get('plugins.tidyhtml.blocklevel_tags')),
-                'new-empty-tags'        =>  implode(' ', $this->config->get('plugins.tidyhtml.empty_tags')),
-                'new-inline-tags'       =>  implode(' ', $this->config->get('plugins.tidyhtml.inline_tags')),
+                'indent'                =>  $this->_getConfigSetting('indent'),
+                'indent-spaces'         =>  $this->_getConfigSetting('indent_spaces'),
+                'wrap'                  =>  $this->_getConfigSetting('wrap'),
+                'hide-comments'         =>  $this->_getConfigSetting('hide_comments'),
+                'new-blocklevel-tags'   =>  implode(' ', $this->_getConfigSetting('blocklevel_tags')),
+                'new-empty-tags'        =>  implode(' ', $this->_getConfigSetting('empty_tags')),
+                'new-inline-tags'       =>  implode(' ', $this->_getConfigSetting('inline_tags')),
                 'newline'               => 'LF',
             );
 
@@ -74,5 +79,30 @@ class TidyhtmlPlugin extends Plugin
             $tidy = tidy_parse_string($originOutput, $config, 'UTF8');
             $tidy->cleanRepair();
             $this->grav->output = $tidy;
+    }
+
+    /**
+     * Checks if the passed url path ist configure to be ignored
+     *
+     * @param string $path
+     * @return bool
+     */
+    public function skipCurrentSite($path) {
+        $ignoredSites = (array) $this->_getConfigSetting('pages');
+        if(in_array($path, $ignoredSites)) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Gets values for a specific config node of the plugin
+     *
+     * @param string $node
+     * @return mixed
+     */
+    protected function _getConfigSetting($node) {
+        return $this->config->get(self::PLUGIN_CONFIG_PATH . '.' . $node);
     }
 }

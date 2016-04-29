@@ -49,3 +49,5 @@ inline_tags:
   - video
   - wbr
   - data
+ignore_pages:
+  - sitemap
