@@ -32,13 +32,16 @@ form:
     indent:
       type: toggle
       label: Ident rendered HTML code
-      highlight: 1
-      default: 1
+      highlight: 2
+      default: 2
       options:
         1: Enabled
+        2: Auto
         0: Disabled
       validate:
-        type: bool
+        type: int
+        min: 0
+        max: 2
     wrap:
       type: text
       label: Line-wrap (0 = no wrapping, 68 = standard)
