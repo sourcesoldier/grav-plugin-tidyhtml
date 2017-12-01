@@ -68,6 +68,16 @@ form:
         0: Disabled
       validate:
         type: bool
+    repair:
+      type: toggle
+      label: Execute cleanup and repair operations
+      highlight: 1
+      default: 1
+      options:
+        1: Yes
+        0: No
+      validate:
+        type: bool
     tag_section:
       type: section
       title: HTML tag configuration

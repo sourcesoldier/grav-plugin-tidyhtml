@@ -1,6 +1,7 @@
 enabled: true
 hide_comments: true
 indent: true
+repair: true
 wrap: 0
 indent_spaces: 4
 blocklevel_tags:

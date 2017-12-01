@@ -77,7 +77,9 @@ class TidyhtmlPlugin extends Plugin
 
             /** @var tidy $tidy */
             $tidy = tidy_parse_string($originOutput, $config, 'UTF8');
-            $tidy->cleanRepair();
+            if ($this->_getConfigSetting('repair') === true) {
+              $tidy->cleanRepair();
+            }
             $this->grav->output = $tidy;
     }
 
