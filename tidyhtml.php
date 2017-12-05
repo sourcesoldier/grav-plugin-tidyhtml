@@ -66,6 +66,7 @@ class TidyhtmlPlugin extends Plugin
 
             $config = array(
                 'indent'                =>  $this->_getConfigSetting('indent'),
+                'drop-empty-elements'   =>  $this->_getConfigSetting('drop_empty'),
                 'indent-spaces'         =>  $this->_getConfigSetting('indent_spaces'),
                 'wrap'                  =>  $this->_getConfigSetting('wrap'),
                 'hide-comments'         =>  $this->_getConfigSetting('hide_comments'),

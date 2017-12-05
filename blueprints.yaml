@@ -78,6 +78,16 @@ form:
         0: No
       validate:
         type: bool
+    drop_empty:
+      type: toggle
+      label: Drop empty HTML-elements
+      highlight: 0
+      default: 0
+      options:
+        1: Yes
+        0: No
+      validate:
+        type: bool
     tag_section:
       type: section
       title: HTML tag configuration
