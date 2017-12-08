@@ -32,13 +32,16 @@ form:
     indent:
       type: toggle
       label: Ident rendered HTML code
-      highlight: 1
-      default: 1
+      highlight: 2
+      default: 2
       options:
         1: Enabled
+        2: Auto
         0: Disabled
       validate:
-        type: bool
+        type: int
+        min: 0
+        max: 2
     wrap:
       type: text
       label: Line-wrap (0 = no wrapping, 68 = standard)
@@ -63,6 +66,26 @@ form:
       options:
         1: Enabled
         0: Disabled
+      validate:
+        type: bool
+    repair:
+      type: toggle
+      label: Execute cleanup and repair operations
+      highlight: 1
+      default: 1
+      options:
+        1: Yes
+        0: No
+      validate:
+        type: bool
+    drop_empty:
+      type: toggle
+      label: Drop empty HTML-elements
+      highlight: 0
+      default: 0
+      options:
+        1: Yes
+        0: No
       validate:
         type: bool
     tag_section:

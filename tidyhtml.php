@@ -66,6 +66,7 @@ class TidyhtmlPlugin extends Plugin
 
             $config = array(
                 'indent'                =>  $this->_getConfigSetting('indent'),
+                'drop-empty-elements'   =>  $this->_getConfigSetting('drop_empty'),
                 'indent-spaces'         =>  $this->_getConfigSetting('indent_spaces'),
                 'wrap'                  =>  $this->_getConfigSetting('wrap'),
                 'hide-comments'         =>  $this->_getConfigSetting('hide_comments'),
@@ -77,7 +78,9 @@ class TidyhtmlPlugin extends Plugin
 
             /** @var tidy $tidy */
             $tidy = tidy_parse_string($originOutput, $config, 'UTF8');
-            $tidy->cleanRepair();
+            if ($this->_getConfigSetting('repair') === true) {
+              $tidy->cleanRepair();
+            }
             $this->grav->output = $tidy;
     }
 
